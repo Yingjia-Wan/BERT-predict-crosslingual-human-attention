@@ -1,0 +1,282 @@
+
+%%shell
+cd /content/relative_importance
+python analyze_all.py
+
+geco
+saliency
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+geco bert
+Token alignment errors:  81
+Spearman Correlation Model: Mean, Stdev
+0.5355734293651041 0.38331429118788746
+
+
+
+
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+/content/relative_importance/analysis/calculate_baselines.py:75: RuntimeWarning: Mean of empty slice
+  mean_sentence = np.nanmean(np.asarray(random_correlations))
+---------------
+Permutation baseline: Mean: -0.00, stdev: 0.05
+---------------
+
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+geco albert
+Token alignment errors:  0
+Spearman Correlation Model: Mean, Stdev
+0.4805414917785341 0.3990780922059055
+
+
+
+
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+/content/relative_importance/analysis/calculate_baselines.py:75: RuntimeWarning: Mean of empty slice
+  mean_sentence = np.nanmean(np.asarray(random_correlations))
+---------------
+Permutation baseline: Mean: 0.00, stdev: 0.05
+---------------
+
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+geco distil
+Token alignment errors:  81
+Spearman Correlation Model: Mean, Stdev
+0.5061066584339192 0.3897222961826243
+
+
+
+
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+/content/relative_importance/analysis/calculate_baselines.py:75: RuntimeWarning: Mean of empty slice
+  mean_sentence = np.nanmean(np.asarray(random_correlations))
+---------------
+Permutation baseline: Mean: -0.00, stdev: 0.04
+---------------
+
+attention
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+geco bert
+Token alignment errors:  81
+Spearman Correlation Model: Mean, Stdev
+0.18251484589295297 0.4388215316623401
+
+
+
+
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+/content/relative_importance/analysis/calculate_baselines.py:75: RuntimeWarning: Mean of empty slice
+  mean_sentence = np.nanmean(np.asarray(random_correlations))
+---------------
+Permutation baseline: Mean: -0.00, stdev: 0.05
+---------------
+
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+geco albert
+Token alignment errors:  367
+Spearman Correlation Model: Mean, Stdev
+0.25550212026464064 0.44057655050114314
+
+
+
+
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+/content/relative_importance/analysis/calculate_baselines.py:75: RuntimeWarning: Mean of empty slice
+  mean_sentence = np.nanmean(np.asarray(random_correlations))
+---------------
+Permutation baseline: Mean: -0.00, stdev: 0.05
+---------------
+
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+geco distil
+Token alignment errors:  81
+Spearman Correlation Model: Mean, Stdev
+0.06003836713082663 0.4492653781234982
+
+
+
+
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/usr/local/lib/python3.8/dist-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+/content/relative_importance/analysis/calculate_baselines.py:75: RuntimeWarning: Mean of empty slice
+  mean_sentence = np.nanmean(np.asarray(random_correlations))
+---------------
+Permutation baseline: Mean: 0.00, stdev: 0.05
+---------------
+
+  importance_type  ... std_correlation
+0        saliency  ...        0.383314
+1        saliency  ...        0.399078
+2        saliency  ...        0.389722
+3       attention  ...        0.438822
+4       attention  ...        0.440577
+5       attention  ...        0.449265
+
+[6 rows x 5 columns]
+
+  importance_type  ... std_correlation
+0        saliency  ...        0.045032
+1        saliency  ...        0.045771
+2        saliency  ...        0.044544
+3       attention  ...        0.046583
+4       attention  ...        0.045385
+5       attention  ...        0.045194
+
+[6 rows x 5 columns]
+
+Empty DataFrame
+Columns: [corpus, baseline_type, mean_correlation, std_correlation]
+Index: []
+
+zuco
+saliency
+zuco bert
+Token alignment errors:  71
+Spearman Correlation Model: Mean, Stdev
+0.6797022212709019 0.2064183065008222
+
+
+
+
+---------------
+Permutation baseline: Mean: -0.00, stdev: 0.03
+---------------
+
+zuco albert
+Token alignment errors:  3
+Spearman Correlation Model: Mean, Stdev
+0.6192498275115023 0.2260502791054625
+
+
+
+
+---------------
+Permutation baseline: Mean: -0.00, stdev: 0.03
+---------------
+
+zuco distil
+Token alignment errors:  71
+Spearman Correlation Model: Mean, Stdev
+0.6428957670009539 0.22060635196122058
+
+
+
+
+---------------
+Permutation baseline: Mean: 0.00, stdev: 0.03
+---------------
+
+attention
+zuco bert
+Token alignment errors:  71
+Spearman Correlation Model: Mean, Stdev
+0.11423657134965315 0.3277511337290547
+
+
+
+
+---------------
+Permutation baseline: Mean: -0.00, stdev: 0.03
+---------------
+
+zuco albert
+Token alignment errors:  147
+Spearman Correlation Model: Mean, Stdev
+0.3689093433689321 0.27783043146453357
+
+
+
+
+---------------
+Permutation baseline: Mean: 0.00, stdev: 0.03
+---------------
+
+zuco distil
+Token alignment errors:  71
+Spearman Correlation Model: Mean, Stdev
+0.029608780207461088 0.3445260272309567
+
+
+
+
+---------------
+Permutation baseline: Mean: 0.00, stdev: 0.03
+---------------
+
+   importance_type  ... std_correlation
+0         saliency  ...        0.383314
+1         saliency  ...        0.399078
+2         saliency  ...        0.389722
+3        attention  ...        0.438822
+4        attention  ...        0.440577
+5        attention  ...        0.449265
+6         saliency  ...        0.206418
+7         saliency  ...        0.226050
+8         saliency  ...        0.220606
+9        attention  ...        0.327751
+10       attention  ...        0.277830
+11       attention  ...        0.344526
+
+[12 rows x 5 columns]
+
+   importance_type  ... std_correlation
+0         saliency  ...        0.045032
+1         saliency  ...        0.045771
+2         saliency  ...        0.044544
+3        attention  ...        0.046583
+4        attention  ...        0.045385
+5        attention  ...        0.045194
+6         saliency  ...        0.032110
+7         saliency  ...        0.034451
+8         saliency  ...        0.029647
+9        attention  ...        0.033321
+10       attention  ...        0.032465
+11       attention  ...        0.031769
+
+[12 rows x 5 columns]
+
+Empty DataFrame
+Columns: [corpus, baseline_type, mean_correlation, std_correlation]
+Index: []
