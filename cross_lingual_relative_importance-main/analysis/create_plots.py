@@ -31,7 +31,7 @@ def process_tokens(all_tokens, lang):
     frequencies = []
 
     for tokens in all_tokens:
-        doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
+        doc = Doc(nlp.vocab, words=tokens)
         processed = nlp(doc)
         sentence_tags = [token.pos_ for token in processed]
         sentence_frequencies = [word_frequency(token.lemma_, lang, wordlist='best', minimum=0.0) for token in processed]
