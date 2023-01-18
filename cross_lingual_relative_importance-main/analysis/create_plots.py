@@ -17,7 +17,7 @@ from .format import shorten_model_name, shorten_importance_type, format_corpus_n
 
 def process_tokens(all_tokens, lang):
     if lang == 'en':
-            nlp = spacy.load('en_core_web_md')
+        nlp = spacy.load('en_core_web_md')
     elif lang == 'de':
         nlp = spacy.load('de_core_news_sm')
     elif lang == 'nl':
