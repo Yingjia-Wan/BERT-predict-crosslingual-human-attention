@@ -8,16 +8,16 @@ Alexander Koplenig wrote the `mixed-effects/lmm.do` file.
 
 
 ### 1 Rerunning the experiments
-The complete commands to run the whole experiments:
-`
+- The complete commands to run the whole experiments:
+```
 cd L2-English-eyetracking-data-in-predicting-human-processing/cross_lingual_relative_importance-main
-
 pip3 install -r requirements.txt
 python extract_all.py
 python analyze_all.py
-`
+```
+- `extract_all.py` is optional if you don't need to change or add any corpus/model, because the intermediate files have already been generated and saved in this repository.
 
-If running `analyze_all.py` for the first time, the script will take a bit longer to create two `.csv`-files: `aligned_words.csv` and `human_words.csv`. These contain all word-level information needed to run the experiments, e.g. token, relative importance, word length and word frequency. These are saved in the `results/words` folder and can be used for additional analysis.
+-If running `analyze_all.py` for the first time, the script will take a bit longer to create two `.csv`-files: `aligned_words.csv` and `human_words.csv`. These contain all word-level information needed to run the experiments, e.g. token, relative importance, word length and word frequency. These are saved in the `results/words` folder and can be used for additional analysis.
 
 Once `analyze_all.py` has finished, a final Excel file will be created: `all_results-<timestamp>.xlsx`. It contains all of the results organized into four tabs.
 
