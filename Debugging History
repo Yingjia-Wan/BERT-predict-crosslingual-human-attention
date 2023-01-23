@@ -21,7 +21,9 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
     'PP_NR' -> 'PP_ID'
     
   added if for chinese (outdated*)
-  *created a data_extractor_geco_ch specifically for chinese, so that we can test and prcoess the chiense corspus separately
+  *created a data_extractor_geco_ch specifically for chinese. Two reasons for  this:
+    (1)so that we can test and prcoess the chiense corspus separately;
+    (2)to conveniently modified the extracting column name
 
 3. modified analyse_all.py
   added chines corpus and modelpath
