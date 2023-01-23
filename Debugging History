@@ -10,4 +10,11 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
 
 
 1. modifed extract_all.py
-removed unnecessary BERT variants, added calling data_extract_chinese
+removed unnecessary BERT variants
+added model paths for chinese BERT
+completed: def extract_all_human_importance(corpus)
+
+2. modified data_extractor_geco
+changed the extracted columns representing the same values as in the English data
+
+3. modified analyse_all.py
