@@ -3,11 +3,11 @@ This project contains the code for the 4k essay by Mphil student Yingjia Wan, De
 
 ### Acknowledgements
 A large part of the code base of https://github.com/beinborn/relative_importance has been re-purposed for this project.
-The codes for multilingual data_extractor and analysis are based on https://github.com/felixhultin/cross_lingual_relative_importance. Necessary modifications of corpus data and scripts are recorded at Debugging History.
+The codes for multilingual data_extractor and analysis are based on https://github.com/felixhultin/cross_lingual_relative_importance. Necessary modifications of corpus data and scripts are made by me and recorded in steps at https://github.com/Yingjia-Wan/L2-English-eyetracking-data-in-predicting-human-processing/blob/f5f992a3fb897232a3c7179da17622d899532d5c/Debugging%20History.
 Alexander Koplenig wrote the `mixed-effects/lmm.do` file.
 
 
-### 1 Running the experiments
+### 1 Rerunning the experiments
 
 If running `analyze_all.py` for the first time, the script will take a bit longer to create two `.csv`-files: `aligned_words.csv` and `human_words.csv`. These contain all word-level information needed to run the experiments, e.g. token, relative importance, word length and word frequency. These are saved in the `results/words` folder and can be used for additional analysis.
 
@@ -25,11 +25,14 @@ Once `analyze_all.py` has finished, a final Excel file will be created: `all_res
 
 These files are created by running `extract_all.py`, which use the files created by the data extractor scripts in the folder `extract_human_fixations`. See its specific [README](extract_human_fixations/README.md) for information on how to add a new corpus or re-run the scripts.
 
-### 3. Generating plots
+### 2. Pre-proccessing (optional)
+
+
+### 4. Generating plots
 
 Run `python -m analysis.create_plots all_results-<timestamp>.xlsx` on the Excel file (see section 1) to create the respective plots. The plots are saved in the `plots` folder.
 
-### 4. Folder structure
+### 5. Folder structure
 
 - **extract_human_fixations**: code to extract the relative fixation duration from the five eye-tracking corpora and average it over all subjects.
 
@@ -41,7 +44,7 @@ Run `python -m analysis.create_plots all_results-<timestamp>.xlsx` on the Excel 
 
 - **results**: contains intermediate results.
 
-### 4. Requirements
+### 6. Requirements
 
 Python should be <= 3.8.
 
@@ -53,8 +56,7 @@ Note that later versions of transformers might lead to errors.
 To install, create and activate a virtual environment and run:  
 `pip3 install -r requirements.txt`
 
-For the more fine-grained analyses (POS-tags, word frequencies), you need to download the English spaCy model en_core_web_md to your virtual environment:
-`python -m spacy download en_core_web_md`
+*You also need to download the language-specific spaCy model either to your virtual environment, or incorporate it in the script, from https://spacy.io/models.
 
 ### 5. Regression analysis using Linear mixed models (LMM)
 
