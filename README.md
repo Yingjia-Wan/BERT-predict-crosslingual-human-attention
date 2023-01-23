@@ -31,11 +31,17 @@ Once `analyze_all.py` has finished, a final Excel file will be created: `all_res
 These files are created by running `extract_all.py`, which use the files created by the data extractor scripts in the folder `extract_human_fixations`. See its specific [README](extract_human_fixations/README.md) for information on how to add a new corpus or re-run the scripts.
 
 
-### 3. Generating plots
+### 3. Adding Corpus and Model:
+Specific suggestions and tips of changing the corpus and models in this project code can be found in Debugging History.md.
 
+
+
+### 4. Additional fine-grained Analysis: 
+
+- Generating plots
 Run `python -m analysis.create_plots all_results-<timestamp>.xlsx` on the Excel file (see section 1) to create the respective plots. The plots are saved in the `plots` folder.
 
-### 4. Regression analysis using Linear mixed models (LMM)
+- Regression analysis using Linear mixed models (LMM)
 
 Since LMMs are not readily available in Python, the results of the regression analysis in the paper was done in Stata. To run the script, run `stata mixed-effects/lmm.do`. If you want to create the plots, run `convert_tables_to_results.py`, which will create a `conversion.xlxs` Excel file. Move the `with_reffect` tab of the `conversion.xlsx` Excel file to the `Regression analysis` tab of the original `all_results-<timestamp>.xlsx` Excel file. Then you can run `python -m analysis.create_plots all_results-<timestamp>.xlsx`.
 
