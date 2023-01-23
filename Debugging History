@@ -49,4 +49,11 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
   b. data_extractor_geco_ch can be called to run in the extract_all.py. HOwever, the calling function is commented in extract_all.py, as we suggest to extract the corpus data first to gain relfix and sentence. This is because of two reasons:
     (1) both data_extractor_geco_ch and extract_saliency/attention take exceptionally long; (E.G., REAIDNG GECCO_CH CORPUS FILE： ABOUT 10 MINUTES； EXTRACT_SALIENCY FOR ONE CORPUS: 4H)
     (2) due to variations in corpus configuration, error easily occur in data_extractor of a new corpus.
+    
+- Recommened steps:
 
+```
+python extract_human_fixations/data_extractor_geco_ch.py
+python extract_all.py
+python analyze_all.py
+```
