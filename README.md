@@ -1,6 +1,10 @@
 # L2-English-eyetracking-data-in-predicting-human-processing
-This project contains the code for the paper "Cross-lingual Comparison of Human and Model Relative Word
-Importance"
+This project contains the code for the 4k essay by Mphil student Yingjia Wan, Department of Theoretical and Applied Linguistics, University of Cambridge.
+
+### Acknowledgements
+A large part of the code base of https://github.com/beinborn/relative_importance has been re-purposed for this project.
+The codes for multilingual data_extractor and analysis are based on https://github.com/felixhultin/cross_lingual_relative_importance. Necessary modifications of corpus data and scripts are recorded at Debugging History.
+Alexander Koplenig wrote the `mixed-effects/lmm.do` file.
 
 
 ### 1 Running the experiments
@@ -56,6 +60,4 @@ For the more fine-grained analyses (POS-tags, word frequencies), you need to dow
 
 Since LMMs are not readily available in Python, the results of the regression analysis in the paper was done in Stata. To run the script, run `stata mixed-effects/lmm.do`. If you want to create the plots, run `convert_tables_to_results.py`, which will create a `conversion.xlxs` Excel file. Move the `with_reffect` tab of the `conversion.xlsx` Excel file to the `Regression analysis` tab of the original `all_results-<timestamp>.xlsx` Excel file. Then you can run `python -m analysis.create_plots all_results-<timestamp>.xlsx`.
 
-### Acknowledgements
 
-A large part of the code base of https://github.com/beinborn/relative_importance has been re-purposed for this project. Alexander Koplenig wrote the `mixed-effects/lmm.do` file.
