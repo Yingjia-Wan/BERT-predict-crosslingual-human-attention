@@ -18,3 +18,11 @@ completed: def extract_all_human_importance(corpus)
 changed the extracted columns representing the same values as in the English data
 
 3. modified analyse_all.py
+
+4. cleaned all the russian files
+
+5. supplmented data:
+python -m spacy download zh_core_web_trf
+set up the geco_ch folder with two subfolders: 'raw' and relfix
+put material and L1ReadingData.xlsx in the raw folder
+added modelpath and corpus of geco_ch in extract_all.py and analyze_all.py
