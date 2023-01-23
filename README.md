@@ -3,7 +3,7 @@ This project contains the code for the 4k essay by Mphil student Yingjia Wan, De
 
 ### Acknowledgements
 A large part of the code base of https://github.com/beinborn/relative_importance has been re-purposed for this project.
-The codes for multilingual data_extractor and analysis are based on https://github.com/felixhultin/cross_lingual_relative_importance. Necessary modifications of corpus data and scripts are made by me and recorded in steps at [Debugging History](Debugging History.md).
+The codes for multilingual data_extractor and analysis are based on https://github.com/felixhultin/cross_lingual_relative_importance. Necessary modifications of corpus data and scripts are made by me and recorded in steps at [Debugging History](main/Debugging History.md).
 Alexander Koplenig wrote the `mixed-effects/lmm.do` file.
 
 
