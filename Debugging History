@@ -45,7 +45,7 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
     import error: need to pip install openpyxl
     filenotfound error: modified the reading sentence function by changing the file destination to the abosolute path
     filenotfound errors: this happens constantly when we independently run the data_extractor_geco_ch separately. Needed to change all the destination to ones with the absolute path to avoid trouble.
-    type error in line 58:  subj_data = pd.read_csv(dir+file, delimiter=',') -> subj_data = pd.read_csv(dir + '/' + file, delimiter=',')
+    type error in line 58:  subj_data = pd.read_csv(dir+file, delimiter=',') -> subj_data = pd.read_csv(relfix_dir + file, delimiter=',') [THIS SEEMS TO BE A TYPO FROM THE ORIGINAL CODE.]
   b. data_extractor_geco_ch can be called to run in the extract_all.py. HOwever, the calling function is commented in extract_all.py, as we suggest to extract the corpus data first to gain relfix and sentence. This is because of two reasons:
     (1) both data_extractor_geco_ch and extract_saliency/attention take exceptionally long; (E.G., REAIDNG GECCO_CH CORPUS FILE： ABOUT 10 MINUTES； EXTRACT_SALIENCY FOR ONE CORPUS: 4H)
     (2) due to variations in corpus configuration, error easily occur in data_extractor of a new corpus.
