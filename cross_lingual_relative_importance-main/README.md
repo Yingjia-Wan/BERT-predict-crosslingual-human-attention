@@ -56,7 +56,14 @@ needed to install spacy models for Chinese tokenization: `python -m spacy downlo
 ### 5. cleaned all the files for unneeded languages: Russion, Zuco
 
   
-### 6. Separate Data Extraction: run data_extractor_geco_ch before extract_all to write the two files with tokenized data: eco_ch_relfix_averages.txt, geco_ch_sentences.txt (*)
+### 6. `data_extractor_geco_ch.py` : separately run data_extractor_geco_ch before extract_all to write the two files with tokenized data: eco_ch_relfix_averages.txt, geco_ch_sentences.txt (*)
+
+- data_extractor_geco_ch can be called to run in the extract_all.py. HOwever, the calling function is commented in extract_all.py, as we suggest to extract the corpus data first to gain relfix and sentence. This is because of two reasons:
+
+    (1) both data_extractor_geco_ch and extract_saliency/attention take exceptionally long; (E.G., REAIDNG GECCO_CH CORPUS FILE： ABOUT 10 MINUTES； EXTRACT_SALIENCY FOR ONE CORPUS: 4H)
+    
+    (2) due to variations in corpus configuration, error easily occur in data_extractor of a new corpus.
+
 - debugging: 
     import error: need to pip install openpyxl
     
@@ -66,19 +73,7 @@ needed to install spacy models for Chinese tokenization: `python -m spacy downlo
     
     type error in line 58:  subj_data = pd.read_csv(dir+file, delimiter=',') -> subj_data = pd.read_csv(relfix_dir + file, delimiter=',') [THIS SEEMS TO BE A TYPO FROM THE ORIGINAL CODE.]
     
-- data_extractor_geco_ch can be called to run in the extract_all.py. HOwever, the calling function is commented in extract_all.py, as we suggest to extract the corpus data first to gain relfix and sentence. This is because of two reasons:
-
-    (1) both data_extractor_geco_ch and extract_saliency/attention take exceptionally long; (E.G., REAIDNG GECCO_CH CORPUS FILE： ABOUT 10 MINUTES； EXTRACT_SALIENCY FOR ONE CORPUS: 4H)
-    
-    (2) due to variations in corpus configuration, error easily occur in data_extractor of a new corpus.
-    
-- Recommened steps:
-```
-python extract_human_fixations/data_extractor_geco_ch.py
-python extract_all.py
-python analyze_all.py
-```
-
+ 
     
 ### 7.  Add `extract_attention_1st_layer.py` in `extract_human_importance folder`:
 
