@@ -11,7 +11,7 @@ However, some modifications are made in order to get the script running:
   
   added two empty txt documents in the result folder:geco_ch_relfix_averages.txt, geco_ch_sentences.txt for writing
 
-### 0. modified configurations (in analysis.py + create_plots.py): 
+### 1. modified configurations (in analysis.py + create_plots.py): 
 
 def process_tokens
 
@@ -23,7 +23,7 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
 
 needed to install spacy models for Chinese tokenization: `python -m spacy download zh_core_web_trf`
 
-### 1. modifed extract_all.py
+### 2. modifed extract_all.py
   removed unnecessary BERT variants
   
   added and edited modelpaths for chinese BERT
@@ -32,7 +32,7 @@ needed to install spacy models for Chinese tokenization: `python -m spacy downlo
   
   import data extractor for chinese
 
-### 2. ~modified data_extractor_geco~ created `data_extractor_geco_ch.py`
+### 3. ~modified data_extractor_geco~ created `data_extractor_geco_ch.py`
 
    ###### ~modified data_extractor_geco~ by adding `if` for Chinese data extracting (**outdated***)
    
@@ -48,13 +48,12 @@ needed to install spacy models for Chinese tokenization: `python -m spacy downlo
       `WORD-TOTAL-READING-TIME` -> `IA_DWELL_TIME`
       `PP_NR` ->  `PP_ID`
 
-### 3. modified analyse_all.py
+### 4. modified analyse_all.py
   added chinese corpus and modelpath, added `if` for Chinese
   
   import `data_extractor_geco`
 
-### 4. cleaned all the files for unneeded languages: Russion, Zuco
-
+### 5. cleaned all the files for unneeded languages: Russion, Zuco
 
   
 ### 6. Separate Data Extraction: run data_extractor_geco_ch before extract_all to write the two files with tokenized data: eco_ch_relfix_averages.txt, geco_ch_sentences.txt (*)
