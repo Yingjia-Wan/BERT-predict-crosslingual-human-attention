@@ -75,6 +75,16 @@ needed to install spacy models for Chinese tokenization: `python -m spacy downlo
 ### 7.  Add `extract_attention_1st_layer.py` in `extract_human_importance folder`:
 
 copied the `extract_attention.py` and modified the copy to create `extract_attention_1st_layer.py`. (The codes are originally adapted from: https://github.com/jessevig/bertviz/)
+
+modified extract_all.py to include extract_attention_1st_layer.py
+
+line110```
+        # ORiginally missing from the source code https://github.com/felixhultin/cross_lingual_relative_importance
+        print("Extracting attention_1st_layer for " + modelname)
+        extract_all_attention(model, tokenizer, sentences, outfile+ "attention_1st_layer.txt")
+```
+
+
 - Recommened steps:
 
 ```
