@@ -1,7 +1,7 @@
 The main body of the project codes comes from the Github project: https://github.com/felixhultin/cross_lingual_relative_importance.
 However, some modifications are made in order to get the script running:
-###### Debugging Notes
-### 0. modified analysis/create_plots.py: def process_tokens
+### Debugging Notes
+# 0. modified analysis/create_plots.py: def process_tokens
 line34
 original:
 doc = Doc(nlp.vocab, words=tokens)
@@ -9,29 +9,29 @@ modified:
 doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
 
 
-### 1. modifed extract_all.py
+# 1. modifed extract_all.py
   removed unnecessary BERT variants
-  added model paths for chinese BERT
-  completed: def extract_all_human_importance(corpus)
+  added modelpaths for chinese BERT
+  included chinese in `def extract_all_human_importance(corpus)`
   import data extractor for chinese
 
-### 2. modified data_extractor_geco
+# 2. modified data_extractor_geco
   changed the extracted columns representing the same values as in the English data:
-    'WORD-TOTAL-READING-TIME' -> 'IA_DWELL_TIME'
-    'PP_NR' -> 'PP_ID'
+    `WORD-TOTAL-READING-TIME` -> `IA_DWELL_TIME`
+    `PP_NR` -> `PP_ID
     
-  added if for chinese (outdated*)
+  added `if` for chinese (**outdated***)
   *created a data_extractor_geco_ch specifically for chinese. Two reasons for  this:
     (1)so that we can test and prcoess the chiense corspus separately;
     (2)to conveniently modified the extracting column name
 
-### 3. modified analyse_all.py
+# 3. modified analyse_all.py
   added chines corpus and modelpath
   import data extractor for chinese
 
-### 4. cleaned all the files for unneeded languages: Russion, Zuco
+# 4. cleaned all the files for unneeded languages: Russion, Zuco
 
-### 5. supplmented data:
+# 5. supplmented data:
   python -m spacy download zh_core_web_trf
   set up the geco_ch folder with two subfolders: 'raw' and relfix
   put material and L1ReadingData.xlsx in the raw folder
