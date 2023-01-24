@@ -13,6 +13,8 @@ pip3 install -r requirements.txt
 python extract_all.py
 python analyze_all.py
 ```
+- Extract_all.py takes exceptionally longer time to complete, as it calls to run scripts from both [extract_human_fixations] amd [extract model importance] folder. For example, it takes 3-4 hours to read and tokenize geco_en corpus to generate results for human relative fixation importacne. For each model per corpus, it requires 5-6 hours to extract the 1st-layer attention, last-layer attention, and saliency scores. Therefore, results for these human importance and model importance are stored in the results file, so you can skip running `python extract_all.py` to save time.
+
 - If running `analyze_all.py` for the first time, the script will take a bit longer to create two `.csv`-files: `aligned_words.csv` and `human_words.csv`. These contain all word-level information needed to run the experiments, e.g. token, relative importance, word length and word frequency. These are saved in the `results/words` folder and can be used for additional analysis.
 
 Once `analyze_all.py` has finished, a final Excel file will be created: `all_results-<timestamp>.xlsx`. It contains all of the results organized into four tabs.
@@ -66,4 +68,4 @@ Note that later versions of transformers might lead to errors.
 To install, create and activate a virtual environment and run:  
 `pip3 install -r requirements.txt`
 
-*You also need to download the language-specific spaCy model either to your virtual environment, or incorporate it in the script, from https://spacy.io/models.
+*If adding a corpus for a different language, you also need to download the language-specific spaCy model either to your virtual environment, or incorporate it in the script, from https://spacy.io/models.
