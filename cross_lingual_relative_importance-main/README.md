@@ -92,7 +92,9 @@ line 21, added:
 
 ### 8. `analyze_all.py` 
 Debugging:
+
 (1) Spacy FUnction TypeError:
+
 Traceback (most recent call last):
   File "analyze_all.py", line 405, in <module>
     human_words_df, aligned_words_df = populate_dataframes(corpora_modelpaths, types)
