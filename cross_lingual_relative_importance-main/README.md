@@ -21,22 +21,27 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
   
   import data extractor for chinese
 
-### 2. modified data_extractor_geco, created `data_extractor_geco_ch.py`
-  changed the extracted columns representing the same values as in the English data:
+### 2. ~modified data_extractor_geco~ created `data_extractor_geco_ch.py`
 
-    `WORD-TOTAL-READING-TIME` -> `IA_DWELL_TIME`
-    `PP_NR` -> `PP_ID`
-
-  added `if` for chinese (**outdated***)
-  
+   ###### ~modified data_extractor_geco~ by adding `if` for Chinese data extracting (**outdated***)
+   
   *created a `data_extractor_geco_ch.py` specifically for chinese. Two reasons for  this:
     (1)so that we can test and prcoess the chiense corspus separately;
     (2)to conveniently modified the extracting column name
+    
+   ###### In `data_extractor_geco`
+
+    changed the extracted columns representing the same values as in the Chinese data:
+      `WORD-TOTAL-READING-TIME` -> `IA_DWELL_TIME`
+      `PP_NR` -> `PP_ID`
+  
+    edited configurations for Chinese
+
 
 ### 3. modified analyse_all.py
-  added chines corpus and modelpath
+  added chinese corpus and modelpath, added `if` for Chinese
   
-  import data extractor for chinese
+  import `data_extractor_geco`
 
 ### 4. cleaned all the files for unneeded languages: Russion, Zuco
 
