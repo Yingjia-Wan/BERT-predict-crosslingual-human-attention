@@ -21,7 +21,7 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
   
   import data extractor for chinese
 
-### 2. modified data_extractor_geco
+### 2. modified data_extractor_geco, created `data_extractor_geco_ch.py`
   changed the extracted columns representing the same values as in the English data:
   
     `WORD-TOTAL-READING-TIME` -> `IA_DWELL_TIME`
@@ -29,7 +29,7 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
     
   added `if` for chinese (**outdated***)
   
-  *created a data_extractor_geco_ch specifically for chinese. Two reasons for  this:
+  *created a `data_extractor_geco_ch.py` specifically for chinese. Two reasons for  this:
     (1)so that we can test and prcoess the chiense corspus separately;
     (2)to conveniently modified the extracting column name
 
@@ -51,10 +51,7 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
   
   added two empty txt documents in the result folder:geco_ch_relfix_averages.txt, geco_ch_sentences.txt for writing
   
-
-### 6. modified the extractor_all and data_extractor_geco_ch to process the geco_ch separately
-
-### 7. run data_extractor_geco_ch before extract_all to write the two files with tokenized data: eco_ch_relfix_averages.txt, geco_ch_sentences.txt (*)
+### 6. Separate Data Extraction: run data_extractor_geco_ch before extract_all to write the two files with tokenized data: eco_ch_relfix_averages.txt, geco_ch_sentences.txt (*)
 - debugging: 
     import error: need to pip install openpyxl
     
@@ -65,10 +62,14 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
     type error in line 58:  subj_data = pd.read_csv(dir+file, delimiter=',') -> subj_data = pd.read_csv(relfix_dir + file, delimiter=',') [THIS SEEMS TO BE A TYPO FROM THE ORIGINAL CODE.]
     
 - data_extractor_geco_ch can be called to run in the extract_all.py. HOwever, the calling function is commented in extract_all.py, as we suggest to extract the corpus data first to gain relfix and sentence. This is because of two reasons:
-- 
+
     (1) both data_extractor_geco_ch and extract_saliency/attention take exceptionally long; (E.G., REAIDNG GECCO_CH CORPUS FILE： ABOUT 10 MINUTES； EXTRACT_SALIENCY FOR ONE CORPUS: 4H)
     
     (2) due to variations in corpus configuration, error easily occur in data_extractor of a new corpus.
+    
+### 7.  Add `extract_attention_1st_layer.py` in `extract_human_importance folder`:
+
+copied the `extract_attention.py` and modified the copy to create `extract_attention_1st_layer.py`
     
 - Recommened steps:
 
