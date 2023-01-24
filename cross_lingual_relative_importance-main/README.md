@@ -23,10 +23,10 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
 
 ### 2. modified data_extractor_geco, created `data_extractor_geco_ch.py`
   changed the extracted columns representing the same values as in the English data:
-  
+
     `WORD-TOTAL-READING-TIME` -> `IA_DWELL_TIME`
-    `PP_NR` -> `PP_ID
-    
+    `PP_NR` -> `PP_ID`
+
   added `if` for chinese (**outdated***)
   
   *created a `data_extractor_geco_ch.py` specifically for chinese. Two reasons for  this:
@@ -69,8 +69,7 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
     
 ### 7.  Add `extract_attention_1st_layer.py` in `extract_human_importance folder`:
 
-copied the `extract_attention.py` and modified the copy to create `extract_attention_1st_layer.py`
-    
+copied the `extract_attention.py` and modified the copy to create `extract_attention_1st_layer.py`. (The codes are originally adapted from: https://github.com/jessevig/bertviz/)
 - Recommened steps:
 
 ```
