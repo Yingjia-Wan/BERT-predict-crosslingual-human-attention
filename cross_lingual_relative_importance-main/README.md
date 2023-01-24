@@ -1,7 +1,7 @@
 The main body of the project codes comes from the Github project: https://github.com/felixhultin/cross_lingual_relative_importance.
 However, some modifications are made in order to get the script running:
-### Debugging Notes
-# 0. modified analysis/create_plots.py: 
+# Debugging Notes
+### 0. modified analysis/create_plots.py: 
 
 def process_tokens
 
@@ -12,7 +12,7 @@ modified:
 doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
 
 
-# 1. modifed extract_all.py
+### 1. modifed extract_all.py
   removed unnecessary BERT variants
   
   added modelpaths for chinese BERT
@@ -21,7 +21,7 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
   
   import data extractor for chinese
 
-# 2. modified data_extractor_geco
+### 2. modified data_extractor_geco
   changed the extracted columns representing the same values as in the English data:
   
     `WORD-TOTAL-READING-TIME` -> `IA_DWELL_TIME`
@@ -33,14 +33,14 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
     (1)so that we can test and prcoess the chiense corspus separately;
     (2)to conveniently modified the extracting column name
 
-# 3. modified analyse_all.py
+### 3. modified analyse_all.py
   added chines corpus and modelpath
   
   import data extractor for chinese
 
-# 4. cleaned all the files for unneeded languages: Russion, Zuco
+### 4. cleaned all the files for unneeded languages: Russion, Zuco
 
-# 5. supplmented data:
+### 5. supplmented data:
   python -m spacy download zh_core_web_trf
   
   set up the geco_ch folder with two subfolders: 'raw' and relfix
@@ -55,14 +55,19 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
 ### 6. modified the extractor_all and data_extractor_geco_ch to process the geco_ch separately
 
 ### 7. run data_extractor_geco_ch before extract_all to write the two files with tokenized data: eco_ch_relfix_averages.txt, geco_ch_sentences.txt (*)
-
-  a. debugging: 
+- debugging: 
     import error: need to pip install openpyxl
+    
     filenotfound error: modified the reading sentence function by changing the file destination to the abosolute path
+    
     filenotfound errors: this happens constantly when we independently run the data_extractor_geco_ch separately. Needed to change all the destination to ones with the absolute path to avoid trouble.
+    
     type error in line 58:  subj_data = pd.read_csv(dir+file, delimiter=',') -> subj_data = pd.read_csv(relfix_dir + file, delimiter=',') [THIS SEEMS TO BE A TYPO FROM THE ORIGINAL CODE.]
-  b. data_extractor_geco_ch can be called to run in the extract_all.py. HOwever, the calling function is commented in extract_all.py, as we suggest to extract the corpus data first to gain relfix and sentence. This is because of two reasons:
+    
+- data_extractor_geco_ch can be called to run in the extract_all.py. HOwever, the calling function is commented in extract_all.py, as we suggest to extract the corpus data first to gain relfix and sentence. This is because of two reasons:
+- 
     (1) both data_extractor_geco_ch and extract_saliency/attention take exceptionally long; (E.G., REAIDNG GECCO_CH CORPUS FILE： ABOUT 10 MINUTES； EXTRACT_SALIENCY FOR ONE CORPUS: 4H)
+    
     (2) due to variations in corpus configuration, error easily occur in data_extractor of a new corpus.
     
 - Recommened steps:
