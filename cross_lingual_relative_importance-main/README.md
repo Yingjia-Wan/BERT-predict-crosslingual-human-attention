@@ -78,15 +78,16 @@ copied the `extract_attention.py` and modified the copy to create `extract_atten
 
 modified extract_all.py to include extract_attention_1st_layer.py
 
-line110```
+line110
+```
         # ORiginally missing from the source code https://github.com/felixhultin/cross_lingual_relative_importance
         print("Extracting attention_1st_layer for " + modelname)
         extract_all_attention(model, tokenizer, sentences, outfile+ "attention_1st_layer.txt")
 ```
 
 
-- Recommened steps:
 
+- Recommened steps:
 ```
 python extract_human_fixations/data_extractor_geco_ch.py
 python extract_all.py
