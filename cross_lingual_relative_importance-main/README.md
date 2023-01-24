@@ -1,7 +1,17 @@
 The main body of the project codes comes from the Github project: https://github.com/felixhultin/cross_lingual_relative_importance.
 However, some modifications are made in order to get the script running:
 # Debugging Notes
-### 0. modified analysis/create_plots.py: 
+
+### 0. supplmented data:  
+  set up the geco_ch folder with two subfolders: 'raw' and relfix
+  
+  downloaded ChineseMaterials.xlsx and L1ReadingData.xlsx in the raw folder
+  
+  added modelpath and corpus of geco_ch in extract_all.py and analyze_all.py
+  
+  added two empty txt documents in the result folder:geco_ch_relfix_averages.txt, geco_ch_sentences.txt for writing
+
+### 0. modified configurations (in analysis.py + create_plots.py): 
 
 def process_tokens
 
@@ -11,11 +21,12 @@ doc = Doc(nlp.vocab, words=tokens)
 modified:
 doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
 
+needed to install spacy models for Chinese tokenization: `python -m spacy download zh_core_web_trf`
 
 ### 1. modifed extract_all.py
   removed unnecessary BERT variants
   
-  added modelpaths for chinese BERT
+  added and edited modelpaths for chinese BERT
   
   included chinese in `def extract_all_human_importance(corpus)`
   
@@ -30,13 +41,12 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
     (2)to conveniently modified the extracting column name
     
    ###### In `data_extractor_geco`
-
+    
+    edited configurations for Chinese
+    
     changed the extracted columns representing the same values as in the Chinese data:
       `WORD-TOTAL-READING-TIME` -> `IA_DWELL_TIME`
-      `PP_NR` -> `PP_ID`
-  
-    edited configurations for Chinese
-
+      `PP_NR` ->  `PP_ID`
 
 ### 3. modified analyse_all.py
   added chinese corpus and modelpath, added `if` for Chinese
@@ -45,16 +55,7 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
 
 ### 4. cleaned all the files for unneeded languages: Russion, Zuco
 
-### 5. supplmented data:
-  python -m spacy download zh_core_web_trf
-  
-  set up the geco_ch folder with two subfolders: 'raw' and relfix
-  
-  put material and L1ReadingData.xlsx in the raw folder
-  
-  added modelpath and corpus of geco_ch in extract_all.py and analyze_all.py
-  
-  added two empty txt documents in the result folder:geco_ch_relfix_averages.txt, geco_ch_sentences.txt for writing
+
   
 ### 6. Separate Data Extraction: run data_extractor_geco_ch before extract_all to write the two files with tokenized data: eco_ch_relfix_averages.txt, geco_ch_sentences.txt (*)
 - debugging: 
