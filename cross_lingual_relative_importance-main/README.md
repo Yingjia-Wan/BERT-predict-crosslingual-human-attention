@@ -72,6 +72,14 @@ needed to install spacy models for Chinese tokenization: `python -m spacy downlo
     
     (2) due to variations in corpus configuration, error easily occur in data_extractor of a new corpus.
     
+- Recommened steps:
+```
+python extract_human_fixations/data_extractor_geco_ch.py
+python extract_all.py
+python analyze_all.py
+```
+
+    
 ### 7.  Add `extract_attention_1st_layer.py` in `extract_human_importance folder`:
 
 copied the `extract_attention.py` and modified the copy to create `extract_attention_1st_layer.py`. (The codes are originally adapted from: https://github.com/jessevig/bertviz/)
@@ -87,9 +95,3 @@ line110. added:
 line 21, added:
 `def extract_all_attention_1st_layer(model, tokenizer, sentences, outfile)`
 
-- Recommened steps:
-```
-python extract_human_fixations/data_extractor_geco_ch.py
-python extract_all.py
-python analyze_all.py
-```
