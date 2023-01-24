@@ -11,36 +11,48 @@ doc = spacy.tokens.doc.Doc(nlp.vocab, words=tokens)
 
 # 1. modifed extract_all.py
   removed unnecessary BERT variants
+  
   added modelpaths for chinese BERT
+  
   included chinese in `def extract_all_human_importance(corpus)`
+  
   import data extractor for chinese
 
 # 2. modified data_extractor_geco
   changed the extracted columns representing the same values as in the English data:
+  
     `WORD-TOTAL-READING-TIME` -> `IA_DWELL_TIME`
     `PP_NR` -> `PP_ID
     
   added `if` for chinese (**outdated***)
+  
   *created a data_extractor_geco_ch specifically for chinese. Two reasons for  this:
     (1)so that we can test and prcoess the chiense corspus separately;
     (2)to conveniently modified the extracting column name
 
 # 3. modified analyse_all.py
   added chines corpus and modelpath
+  
   import data extractor for chinese
 
 # 4. cleaned all the files for unneeded languages: Russion, Zuco
 
 # 5. supplmented data:
   python -m spacy download zh_core_web_trf
+  
   set up the geco_ch folder with two subfolders: 'raw' and relfix
+  
   put material and L1ReadingData.xlsx in the raw folder
+  
   added modelpath and corpus of geco_ch in extract_all.py and analyze_all.py
+  
   added two empty txt documents in the result folder:geco_ch_relfix_averages.txt, geco_ch_sentences.txt for writing
+  
 
 ### 6. modified the extractor_all and data_extractor_geco_ch to process the geco_ch separately
 
 ### 7. run data_extractor_geco_ch before extract_all to write the two files with tokenized data: eco_ch_relfix_averages.txt, geco_ch_sentences.txt (*)
+
   a. debugging: 
     import error: need to pip install openpyxl
     filenotfound error: modified the reading sentence function by changing the file destination to the abosolute path
