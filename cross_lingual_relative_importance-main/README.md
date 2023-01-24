@@ -107,13 +107,13 @@ Traceback (most recent call last):
 TypeError: Argument 'string' has incorrect type (expected str, got spacy.tokens.doc.Doc)
   
  **original code** ("create_plots.py", line 38)
-  '''
+```
 doc = Doc(nlp.vocab, words=tokens)
 processed = nlp(doc)
-  '''
+```
  **changed to:**
-  '''
+```
 doc = Doc(nlp.vocab, words=tokens)
 text = ' '.join([token.text for token in doc])
 processed = nlp(text)
-  '''
+```
