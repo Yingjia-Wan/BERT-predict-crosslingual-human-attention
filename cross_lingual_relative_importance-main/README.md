@@ -34,7 +34,7 @@ needed to install spacy models for Chinese tokenization: `python -m spacy downlo
 
 ### 3. ~modified data_extractor_geco~ created `data_extractor_geco_ch.py`
 
-   ###### ~modified data_extractor_geco~ by adding `if` for Chinese data extracting (**outdated***)
+   ###### ~modified data_extractor_geco by adding `if` for Chinese data extracting~ (**outdated***)
    
   *created a `data_extractor_geco_ch.py` specifically for chinese. Two reasons for  this:
     (1)so that we can test and prcoess the chiense corspus separately;
