@@ -1,7 +1,7 @@
 The main body of the project codes comes from the Github project: https://github.com/felixhultin/cross_lingual_relative_importance.
 However, some modifications are made in order to get the script running:
 ### Debugging Notes
-# 0. modified analysis/create_plots.py: def process_tokens
+0. modified analysis/create_plots.py: def process_tokens
 line34
 original:
 doc = Doc(nlp.vocab, words=tokens)
