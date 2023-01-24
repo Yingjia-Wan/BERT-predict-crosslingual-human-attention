@@ -90,3 +90,30 @@ line110. added:
 line 21, added:
 `def extract_all_attention_1st_layer(model, tokenizer, sentences, outfile)`
 
+### 8. `analyze_all.py` 
+Debugging:
+(1) Spacy FUnction TypeError:
+Traceback (most recent call last):
+  File "analyze_all.py", line 405, in <module>
+    human_words_df, aligned_words_df = populate_dataframes(corpora_modelpaths, types)
+  File "analyze_all.py", line 126, in populate_dataframes
+    pos_tags, frequencies = process_tokens(et_tokens, lang)
+  File "/media/isshiki/T7S2TB/alisa/L2-English-eyetracking-data-in-predicting-human-processing/cross_lingual_relative_importance-main/analysis/create_plots.py", line 38, in process_tokens
+    processed = nlp(doc)
+  File "/home/isshiki/anaconda3/envs/alisa/lib/python3.8/site-packages/spacy/language.py", line 437, in __call__
+    doc = self.make_doc(text)
+  File "/home/isshiki/anaconda3/envs/alisa/lib/python3.8/site-packages/spacy/language.py", line 467, in make_doc
+    return self.tokenizer(text)
+TypeError: Argument 'string' has incorrect type (expected str, got spacy.tokens.doc.Doc)
+  
+ **original code** ("create_plots.py", line 38)
+  '''
+doc = Doc(nlp.vocab, words=tokens)
+processed = nlp(doc)
+  '''
+ **changed to:**
+  '''
+doc = Doc(nlp.vocab, words=tokens)
+text = ' '.join([token.text for token in doc])
+processed = nlp(text)
+  '''
