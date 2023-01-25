@@ -143,3 +143,10 @@ Solutions: add corresponding keys and values to 'data'. One obstacle is that we 
 **Problem**: Be careful what abrivation Spacy model library and wedfreq libray use to represent languages when you need to enter it for downloading. e.g., Chinese is 'zh' in wordfreq and pacy, but marked as 'ch' in out script.
   
 ** Solution**: Added an `if` loop to discuss CHinese and other languages for collecting POS and word frequency.
+  
+(5) OSError: [Errno 22] Invalid argument: 'results/all_results-2023-01-25-05:58:39.xlsx'
+  line 366, analyze_all.py
+  
+  `timestr = time.strftime("%Y-%m-%d-%H:%M:%S")`
+  to
+  `timestr = time.strftime("%Y-%m-%d-%H-%M-%S")`
