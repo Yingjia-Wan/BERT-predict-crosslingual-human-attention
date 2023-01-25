@@ -127,3 +127,12 @@ line 193 `sent_df = pd.DataFrame(data, columns=aligned_words_df.columns)`
 This is because the two objects of pd.DataFrame() have different numbers of columns. 
 
 Solutions: add corresponding keys and values to 'data'. One obstacle is that we don't have 'sentences' variable available. We can create one by modifying the definition of extract_human_importance() function: this function reads from the sentences.txt and store it in the variable `sentences`, therefore we can add the returning value of 'sentences' there, and then define the 'sentences' variable  to add it to 'data' before line 145.
+  
+(3) (optional improvement) Moved this to when creating dataframes.
+  ```
+  human_words_df['length'] = pd.to_numeric(human_words_df['length'])
+    human_words_df['frequency'] = pd.to_numeric(human_words_df['frequency'])
+  
+    aligned_words_df['length'] = pd.to_numeric(aligned_words_df['length'])
+    aligned_words_df['frequency'] = pd.to_numeric(aligned_words_df['frequency'])
+  ```
