@@ -136,3 +136,6 @@ Solutions: add corresponding keys and values to 'data'. One obstacle is that we 
     aligned_words_df['length'] = pd.to_numeric(aligned_words_df['length'])
     aligned_words_df['frequency'] = pd.to_numeric(aligned_words_df['frequency'])
   ```
+(4) LookupError: No wordlist 'best' available for language 'ch'
+  
+**Problem: ** Be careful that Spacy model library and wedfreq libray use different abrivation to represent languages when you need to enter it for downloading. e.g., Chinese is 'ch' in spacy but 'zh' in wordfreq.
