@@ -119,3 +119,16 @@ doc = Doc(nlp.vocab, words=tokens)
 text = ' '.join([token.text for token in doc])
 processed = nlp(text)
 ```
+(2) Value error:
+```
+    human_words_columns = (
+        'et_token', 'et_importance', 'frequency', 'length', 'sentence', 'corpus')
+```
+```
+            data = {
+                'et_token': zipped[0],
+                'et_importance': zipped[1],
+                'frequency': zipped[2],
+                'length': zipped[3]
+            }
+ ```
