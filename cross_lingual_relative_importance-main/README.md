@@ -129,6 +129,7 @@ This is because the two objects of pd.DataFrame() have different numbers of colu
 Solutions: add corresponding keys and values to 'data'. One obstacle is that we don't have 'sentences' variable available. We can create one by modifying the definition of extract_human_importance() function: this function reads from the sentences.txt and store it in the variable `sentences`, therefore we can add the returning value of 'sentences' there, and then define the 'sentences' variable  to add it to 'data' before line 145.
   
 (3) (optional improvement) Moved this to when creating dataframes.
+  line 153 and 204 now, analyze_all.py
   ```
   human_words_df['length'] = pd.to_numeric(human_words_df['length'])
     human_words_df['frequency'] = pd.to_numeric(human_words_df['frequency'])
@@ -137,5 +138,8 @@ Solutions: add corresponding keys and values to 'data'. One obstacle is that we 
     aligned_words_df['frequency'] = pd.to_numeric(aligned_words_df['frequency'])
   ```
 (4) LookupError: No wordlist 'best' available for language 'ch'
+  line
   
-**Problem: ** Be careful that Spacy model library and wedfreq libray use different abrivation to represent languages when you need to enter it for downloading. e.g., Chinese is 'ch' in spacy but 'zh' in wordfreq.
+**Problem**: Be careful what abrivation Spacy model library and wedfreq libray use to represent languages when you need to enter it for downloading. e.g., Chinese is 'zh' in wordfreq and pacy, but marked as 'ch' in out script.
+  
+** Solution**: Added an `if` loop to discuss CHinese and other languages for collecting POS and word frequency.
