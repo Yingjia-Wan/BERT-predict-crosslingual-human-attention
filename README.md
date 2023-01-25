@@ -5,7 +5,7 @@ This project contains the code for the 4k essay by Mphil student Yingjia Wan, De
 A large part of the code base of https://github.com/beinborn/relative_importance has been re-purposed for this project.
 The codes for multilingual data_extractor and analysis are based on https://github.com/felixhultin/cross_lingual_relative_importance. Necessary modifications of corpus data and scripts are made by me and recorded in steps at [Debugging History](Debugging History).
 
-### 0 Requirements
+### 0. Requirements
 
 Python should be <= 3.8. We use the following packages (see requirements.txt):  
 numpy (1.19.5), tensorflow (2.4.1), transformers (4.2.2), scikit-learn (0.22.2), spacy (2.3.5), wordfreq (2.3.2), scipy (1.4.1)
@@ -17,7 +17,7 @@ To install, create and activate a virtual environment and run:
 *If adding a corpus for a different language, you also need to download the language-specific spaCy model either to your virtual environment, or incorporate it in the script, from https://spacy.io/models.
 For example, for Chinese, run this before the experiments: `python -m spacy download zh_core_web_sm`.
 
-### 1 Rerunning the experiments
+### 1. Rerunning the experiments
 - The complete commands to run the whole experiments (without plots):
 ```
 cd L2-English-eyetracking-data-in-predicting-human-processing/cross_lingual_relative_importance-main
@@ -36,7 +36,7 @@ Once `analyze_all.py` has finished, a final Excel file will be created: `all_res
 - **Corpus statistical baselines** Correlation results (Spearman R) between human and model relative word importance and the two corpus statistical baselines: Word frequency and word length.
 - **Regression analysis**: Results of the linear regression analysis (out-of-date: look at section 5).  
 
-### 2 Optional preprocessing: extract_all.py
+### 2. Optional preprocessing: `extract_all.py`
 `extract_all.py` is optional if you don't need to change or add any corpus/model, because the intermediate files have already been generated and saved in this repository.
 
 - intermediate files:
