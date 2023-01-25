@@ -119,16 +119,11 @@ doc = Doc(nlp.vocab, words=tokens)
 text = ' '.join([token.text for token in doc])
 processed = nlp(text)
 ```
-(2) Value error:
-```
-    human_words_columns = (
-        'et_token', 'et_importance', 'frequency', 'length', 'sentence', 'corpus')
-```
-```
-            data = {
-                'et_token': zipped[0],
-                'et_importance': zipped[1],
-                'frequency': zipped[2],
-                'length': zipped[3]
-            }
- ```
+(2) Value error: Unmatached arrays at:
+
+line 145 `sent_df = pd.DataFrame(data, columns=human_words_df.columns)`
+line 193 `sent_df = pd.DataFrame(data, columns=aligned_words_df.columns)`
+
+This is because the two objects of pd.DataFrame() have different numbers of columns. 
+
+Solutions: add corresponding keys and values to 'data'. One obstacle is that we don't have 'sentences' variable available. We can create one by modifying the definition of extract_human_importance() function: this function reads from the sentences.txt and store it in the variable `sentences`, therefore we can add the returning value of 'sentences' there, and then define the 'sentences' variable  to add it to 'data' before line 145.
