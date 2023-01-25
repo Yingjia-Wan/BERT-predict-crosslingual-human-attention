@@ -5,7 +5,7 @@ This project contains the code for the 4k essay by Mphil student Yingjia Wan, De
 A large part of the code base of https://github.com/beinborn/relative_importance has been re-purposed for this project.
 The codes for multilingual data_extractor and analysis are based on https://github.com/felixhultin/cross_lingual_relative_importance. Necessary modifications of corpus data and scripts are made by me and recorded in steps at [Debugging History](Debugging History).
 
-### 2 Requirements
+### 0 Requirements
 
 Python should be <= 3.8. We use the following packages (see requirements.txt):  
 numpy (1.19.5), tensorflow (2.4.1), transformers (4.2.2), scikit-learn (0.22.2), spacy (2.3.5), wordfreq (2.3.2), scipy (1.4.1)
